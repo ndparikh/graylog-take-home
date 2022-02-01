@@ -16,6 +16,7 @@ In the terraform directory you will see the following files:
 | docker_image.tf | Build and push docker image to ECR repo |
 | ecr.tf | Create an ecr repository  |
 | eks.tf | Provisions all the resources (IAM Role, Security Groups etc...) required to set up an EKS cluster |
+| helm.tf | Install cluster components like external dns, cluster autoscaler, ALB controller etc need to run the app |
 | iam.tf | Create IAM roles that are used by eks node groups |
 | node-workers.tf| Create self managed node group for eks|
 | security_group.tf | Security group that allows access within the VPC |
