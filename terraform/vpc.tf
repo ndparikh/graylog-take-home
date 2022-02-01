@@ -1,6 +1,6 @@
 # Get list of availability zones for the region
 data "aws_availability_zones" "available_zones" {
-  state         = "available"
+  state = "available"
 }
 
 # Get same number of random az's as internal subnet cidr blocks
