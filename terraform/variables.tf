@@ -3,6 +3,10 @@ variable "region" {
   default     = "us-east-1"
 }
 
+variable "cluster_version" {
+  default = "1.21"
+}
+
 #  VPC cidr
 variable "vpc_cidr" {
   default = "10.16.0.0/23"
