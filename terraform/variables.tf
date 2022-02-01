@@ -7,6 +7,11 @@ variable "cluster_version" {
   default = "1.21"
 }
 
+variable "app_version" {
+  description = "Docker image version"
+  default     = "1.0.0"
+}
+
 #  VPC cidr
 variable "vpc_cidr" {
   default = "10.16.0.0/23"
