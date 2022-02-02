@@ -41,7 +41,7 @@ variable "internal_subnet_tags" {
   default = {
     "purpose"                         = "used for all internal facing apps"
     "supported_app_types"             = "internal"
-    "kubernetes.io/cluster/graylog"   = "shared"
+    "kubernetes.io/cluster/graylog-gk"   = "shared"
     "kubernetes.io/role/internal-elb" = "1"
   }
 }
@@ -50,7 +50,7 @@ variable "cluster_version" {
 }
 # app_name
 variable "app_name" {
-  default = "graylog"
+  default = "graylog-gk"
 }
 #  VPC cidr
 variable "vpc_cidr" {
@@ -74,7 +74,7 @@ variable "external_subnet_tags" {
   default = {
     "purpose"                       = "used for all external facing apps"
     "supported_app_types"           = "all external facing load balancers"
-    "kubernetes.io/cluster/graylog" = "shared"
+    "kubernetes.io/cluster/graylog-gk" = "shared"
     "kubernetes.io/role/elb"        = "1"
   }
 }

@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.image.name }}
+  namespace: {{ .Values.namespace }}
+  {{- with .Values.service.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  labels:
+    app.kubernetes.io/name: {{ .Values.image.name }}
+    helm.sh/chart: {{ include "graylog.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    app.kubernetes.io/managed-by: "helm"
+    app.kubernetes.io/version: {{ .Values.image.tag }}
+    app.kubernetes.io/component: "service"
+    app.kubernetes.io/part-of: "graylog-services"
+    app.kubernetes.io/ops_team: "devops"
+    app.kubernetes.io/dev_team: "graylog-services"
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      protocol: {{ .Values.service.protocol }}
+      name: http
+  selector:
+    app.kubernetes.io/name: {{ .Values.image.name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}

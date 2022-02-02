@@ -97,7 +97,7 @@ Change directory to graylog-take-home/terraform
 cd graylog-take-home/terraform
 ```
 
-At a minimum the following input variables needs to change in variables.tf:
+At a minimum the following input variables needs to change in variables.tf Uncomment # default and add the new values:
 | Name                      | Description                        | Default  |
 | ------------------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `acm`            | AWS Certificate certificate arn for the domain   | `""` |                                 |
@@ -111,7 +111,6 @@ At a minimum the following input variables needs to change in variables.tf:
 Once the variables.tf file is updated run the following commands: 
 
 ```bash
-cd terraform
 terraform init
 terraform plan
 terraform apply --auto-approve=true

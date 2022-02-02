@@ -1,0 +1,26 @@
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: {{ .Values.image.name }} 
+  labels:
+    app.kubernetes.io/name: {{ .Values.image.name }}
+    helm.sh/chart: {{ include "graylog.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: "helm"
+    app.kubernetes.io/version: {{ .Values.image.tag }}
+    app.kubernetes.io/component: "service"
+    app.kubernetes.io/part-of: "graylog-services"
+    app.kubernetes.io/ops_team: "devops"
+    app.kubernetes.io/dev_team: "graylog-services"
+spec:
+  fsGroup:
+    rule: RunAsAny
+  runAsUser:
+    rule: RunAsAny
+  seLinux:
+    rule: RunAsAny
+  supplementalGroups:
+    rule: RunAsAny
+  volumes:
+  - secret
+
