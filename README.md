@@ -36,3 +36,11 @@ The code above will provision the following: \
 ✅  `External DNS` for creating route53 entries.\
 ✅  `AWS Load Balancer Controller` for ingress and distributing traffic.\
 ✅  `Route53` dns for accessing the app.
+
+# Getting Started
+This getting started guide will help you deploy Hello Graylog app to eks cluster.
+
+## Prerequisites
+1. Terraform code is executed from an Amazon Linux2 backed EC2 instance with the correct permissions.
+2. Ensure that you have installed the following tools on the EC2 instance.
+
