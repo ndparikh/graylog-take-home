@@ -1,0 +1,24 @@
+image:
+  repository: jakubkulhan/ingress-merge
+  tag: latest
+  pullPolicy: Always
+acm: "arn:aws:acm:us-east-1:859751277609:certificate/0bf3eb1b-7b04-44d3-8a7d-cdc1a00b818d"
+ingressClass: merge
+
+rbac:
+  create: true
+
+serviceAccount:
+  # Specifies whether a ServiceAccount should be created
+  create: true
+  # The name of the ServiceAccount to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name:
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

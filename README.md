@@ -44,3 +44,13 @@ This getting started guide will help you deploy Hello Graylog app to eks cluster
 1. Terraform code is executed from an Amazon Linux2 backed EC2 instance with the correct permissions.
 2. Ensure that you have installed the following tools on the EC2 instance.
 
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) |  0.14.11 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.66.0 |
+| <a name="requirement_helm"></a> [helm](#requirement\_helm) | >= 2.4.1 |
+| <a name="requirement_kubectl"></a> [kubectl](#requirement\_kubectl) | >= 1.18.0 |
+| <a name="requirement_docker"></a> [docker](#requirement\_docker) | 3.1.0 |
+3. Route53 domain ID e.g.  Domain id: ZEDELALDDN, domain name graylogtest.com.
+4. A wildcard acm certificate for the Route53 domain e.g. *graylogtest.com
+5. Route53 dns record for the app. e.g. test.graylogtest.com
