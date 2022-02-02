@@ -54,3 +54,34 @@ This getting started guide will help you deploy Hello Graylog app to eks cluster
 3. Route53 domain ID e.g.  Domain id: ZEDELALDDN, domain name graylogtest.com.
 4. A wildcard acm certificate for the Route53 domain e.g. *graylogtest.com
 5. Route53 dns record for the app. e.g. test.graylogtest.com
+
+## Tools installation
+```bash
+cd /tmp
+```
+Terraform install
+```bash
+curl -O https://releases.hashicorp.com/terraform/0.14.11/terraform_0.14.11_linux_amd64.zip
+unzip terraform_0.14.11_linux_amd64.zip 
+chmod a+x terraform
+sudo mv terraform /usr/bin/
+terraform version
+```
+Helm install
+```bash
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+```
+kubectl install
+```bash
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+```
+docker install and start service
+```bash
+sudo yum install git -y
+sudo amazon-linux-extras install docker -y
+sudo usermod -a -G docker ec2-user
+sudo systemctl start docker
+```
