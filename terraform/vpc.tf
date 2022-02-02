@@ -1,6 +1,8 @@
 # Get list of availability zones for the region
 data "aws_availability_zones" "available_zones" {
   state = "available"
+#excluding us-east-1e for now since no eks capacity
+exclude_names = ["us-east-1e"]
 }
 
 # Get same number of random az's as internal subnet cidr blocks
