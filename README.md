@@ -98,7 +98,7 @@ Change directory to graylog-take-home/terraform
 cd graylog-take-home/terraform
 ```
 
-At a minimum the following input variables needs to change in variables.tf Uncomment # default and add the new values:
+At a minimum the following input variables needs to change in variables.tf. Uncomment `# default` and add the new values e.g.  default     = "acmarnadssdfdsfdsf":
 | Name                      | Description                        | Default  |
 | ------------------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `acm`            | AWS Certificate certificate arn for the domain   | `""` |                                 |
