@@ -1,0 +1,2 @@
+route53_domain: Z035996421MKMXRU4O9XA
+rolename: "arn:aws:iam::130635258951:role/k8s-external-dns" 

@@ -1,0 +1,3 @@
+route53_domain: Z2N8XLD6NPQMTQ
+rolename: "arn:aws:iam::130635258951:role/k8s-external-dns" 
+cluster_name: Prod-1-18-EKS-Cluster

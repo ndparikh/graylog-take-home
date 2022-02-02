@@ -91,7 +91,7 @@ resource "helm_release" "cluster_autoscaler" {
 
 
 resource "helm_release" "graylog" {
-  depends_on       = [null_resource.docker_push, aws_eks_node_group.backend, aws_eks_cluster.be]
+  depends_on       = [null_resource.docker_push, aws_eks_node_group.backend, aws_eks_cluster.be, helm_release.merge-ingress, helm_release.cluster_autoscaler, helm_release.alb_ingress_controller, helm_release.external-dns]
   name             = "graylog"
   chart            = "../helm/graylog"
   namespace        = "graylog"
@@ -110,7 +110,7 @@ resource "helm_release" "graylog" {
 
   set {
     name  = "image.tag"
-    value = "1.0.0"
+    value = var.app_version
   }
 
   set {
