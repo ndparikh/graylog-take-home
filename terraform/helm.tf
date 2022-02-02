@@ -8,7 +8,7 @@ resource "null_resource" "create_ns" {
            set -e
            aws eks update-kubeconfig --name ${var.app_name}  --region ${var.region} --kubeconfig ./kube-config
            export KUBECONFIG=./kube-config
-           kubectl apply -f templates/namespaces.yaml
+           kubectl apply -f templates/namespaces.yml
       EOT
   }
 }
