@@ -13,12 +13,12 @@ variable "acm" {
 
 variable "route53_domain" {
   description = "route53 domain where the dns record for the k8s will be created"
-#  default     = "ZP2XDHTRBXZW"
+#  default     = ""
 }
 
 variable "app_dns_name" {
   description = "route53 dns record name. graylog.allcloudthings.com. Where the domain name depends on route53_domain above"
-#  default     = "graylog-test-gk.allcloudthings.com"
+#  default     = ""
 }
 
 variable "app_version" {
