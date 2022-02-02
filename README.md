@@ -75,7 +75,7 @@ chmod 700 get_helm.sh
 ```
 kubectl install
 ```bash
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 ```
 docker install and start service
@@ -85,3 +85,16 @@ sudo amazon-linux-extras install docker -y
 sudo usermod -a -G docker ec2-user
 sudo systemctl start docker
 ```
+Log out and log back in again to pick up the new docker group permissions. You can accomplish this by closing your current SSH terminal window and reconnecting to your instance in a new one. Your new SSH session will have the appropriate docker group permissions.
+
+## Configuration
+
+At a minimum the following input variables needs to change in variables.tf:
+| Name                      | Description                        | Default  |
+| ------------------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `acm`            | AWS Certificate certificate arn for the domain   | `""` |                                 |
+| `region`              | The AWS Region to deploy EKS       | `us-east-1` |
+| `route53_domain`      |  route53 domain ID where the dns record for the k8s will be created. For example ZP2XDW6HJBXZT | `""`   |
+| `app_dns_name`             | Route53 dns record name. graylog.DOMAIN-NAME.com. Where the domain name depends on route53_domain above  | `""`           |
+| `app_version`             | Docker image version  | `1.0.0`           |
+
