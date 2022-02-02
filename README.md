@@ -116,8 +116,13 @@ terraform init
 terraform plan
 terraform apply --auto-approve=true
 ```
-This might take around 20 minutes the provision all the resources. After terraform apply is successful curl the `app_dns_name` name that was defined in the variables.tf 
+This might take around 20 minutes the provision all the resources. After terraform apply is successful curl the `app_dns_name` name that was defined in the variables.tf. It will be part of the outputs as `app_url_endpoint`
 ```bash
+
+Outputs:
+
+app_url_endpoint = "https://graylog-gk.*********.com"
+
 curl https://graylog.DOMAIN-NAME.com
 ```
 ### Cleaning up
