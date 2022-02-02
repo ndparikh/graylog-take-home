@@ -88,6 +88,14 @@ sudo systemctl start docker
 Log out and log back in again to pick up the new docker group permissions. You can accomplish this by closing your current SSH terminal window and reconnecting to your instance in a new one. Your new SSH session will have the appropriate docker group permissions.
 
 ## Configuration
+Clone the git repo
+```bash
+git clone https://github.com/gauravkothiyal/graylog-take-home.git
+```
+Change directory to graylog-take-home/terraform
+```bash
+cd graylog-take-home/terraform
+```
 
 At a minimum the following input variables needs to change in variables.tf:
 | Name                      | Description                        | Default  |
@@ -98,3 +106,25 @@ At a minimum the following input variables needs to change in variables.tf:
 | `app_dns_name`             | Route53 dns record name. graylog.DOMAIN-NAME.com. Where the domain name depends on route53_domain above  | `""`           |
 | `app_version`             | Docker image version  | `1.0.0`           |
 
+### Terraform
+
+Once the variables.tf file is updated run the following commands: 
+
+```bash
+cd terraform
+terraform init
+terraform plan
+terraform apply --auto-approve=true
+```
+This might take around 20 minutes the provision all the resources. After terraform apply is successful curl the `app_dns_name` name that was defined in the variables.tf 
+```bash
+curl https://graylog.DOMAIN-NAME.com
+```
+### Cleaning up
+
+You can destroy this cluster entirely by running:
+
+```bash
+terraform plan -destroy
+terraform destroy  --force
+```
