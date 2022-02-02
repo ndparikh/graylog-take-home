@@ -4,6 +4,7 @@ This repository contains the source code for a Terraform templates to deploy Hel
 
     .
     ├── teraform            # Terraform templates
+    ├── helm                # Helm charts to deploy cluster components
     ├── app                 # Simple nginx app
     └── README.md
 
