@@ -1,7 +1,7 @@
 resource "null_resource" "docker_push" {
   depends_on = [aws_ecr_repository.my_app]
   triggers = {
-    #        script_hash = sha256("../app/Dockerfile")
+    #    script_hash = sha256("../app/Dockerfile")
     always_run = timestamp()
   }
   provisioner "local-exec" {
