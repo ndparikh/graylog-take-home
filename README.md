@@ -37,6 +37,7 @@ The code above will provision the following: \
 ✅  `AWS Load Balancer Controller` for ingress and distributing traffic.\
 ✅  `Route53` dns for accessing the app.
 
+![alt text](https://github.com/gauravkothiyal/graylog-take-home/blob/master/Infra.png?raw=true)
 # Getting Started
 This getting started guide will help you deploy Hello Graylog app to eks cluster.
 
